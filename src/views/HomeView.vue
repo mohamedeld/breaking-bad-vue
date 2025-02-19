@@ -5,6 +5,15 @@ import BreakingCards from '@/components/BreakingCards.vue'
 <template>
   <main>
     <h1>HERO</h1>
-    <BreakingCards />
+    <Suspense>
+      <template #default>
+        <BreakingCards />
+      </template>
+      <template #fallback>
+        <div>
+          <p>Loading...</p>
+        </div>
+      </template>
+    </Suspense>
   </main>
 </template>
